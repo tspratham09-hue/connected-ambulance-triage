@@ -1,32 +1,31 @@
-# 🚑 Connected Ambulance System with AI-Assisted Triage
+# 🚑 Connected Ambulance System & AI Triage Dashboard
 
-An AI-powered emergency response and telemetry dashboard built for the **Emerging Technologies Hackathon 2026** (Problem Statement: **PS14**).
+An end-to-end intelligent emergency medical response system that connects ambulances directly to emergency rooms in real-time. By leveraging AI-driven vital predictive triage, standardizing telemetry data streams, and mapping live dispatch routes, emergency medical teams can prepare resuscitation bays prior to patient arrival.
+
+---
 
 ## 🌟 Key Features
-- **Real-Time Patient Telemetry:** Live tracking of Heart Rate, $SpO_2$, Blood Pressure, and Respiratory Rate.
-- **Predictive AI Triage:** Classifies patient urgency into Green (Stable), Yellow (Urgent), or Red (Critical).
-- **Emergency Room Alerts:** Triggers instant alerts so doctors can prepare trauma bays before the ambulance arrives.
-- **Live Dispatch Tracking:** Interactive map showing ambulance dispatch position and route.
+
+* **⚡ Real-Time Patient Telemetry:** Continuous streaming of vital parameters including Heart Rate (BPM), Oxygen Saturation ($SpO_2$), Systolic Blood Pressure, and Respiratory Rate.
+* **🤖 Predictive AI Triage:** Machine Learning classification model categorizes incoming patients into **🟢 STABLE**, **🟡 URGENT**, or **🔴 CRITICAL** status instantly.
+* **🚨 Automated Trauma Bay Alerts:** Trigger visual alerts and automated audio alarms when a patient enters critical status.
+* **📈 Interactive Vitals Trend Chart:** Live Plotly visualization tracking real-time fluctuations across patient vitals.
+* **📍 Live Dispatch & Route Tracking:** Dynamic Folium spatial map displaying ambulance positioning, target hospital trauma centers, and active emergency zones.
+
+---
 
 ## 🛠️ Tech Stack
-- **Language:** Python
-- **UI / Dashboard:** Streamlit
-- **Machine Learning:** Scikit-Learn (Random Forest)
-- **Maps:** Folium
 
-## 🚀 How to Run Locally
-1. Install dependencies:
+* **Frontend / Dashboard:** Streamlit, Plotly, Streamlit-Folium
+* **Machine Learning:** Scikit-Learn, Joblib, Pandas
+* **Mapping & GIS:** Folium
+* **Language:** Python 3.10+
+
+---
+
+## 💻 Local Setup Instructions
+
+1. **Clone the Repository:**
    ```bash
-   pip install -r requirements.txt
-
-## 🧠 How the AI Model is Trained
-
-The predictive triage engine is built using a complete Machine Learning workflow contained in `train_model.py`. 
-
-1. **Synthetic Data Generation:** We generate 1,000 realistic patient telemetry records spanning normal, urgent, and critical vital ranges (Heart Rate, SpO2, Systolic BP, Respiratory Rate).
-2. **Clinical Rules Engine:** The data is labeled using standard medical early warning scoring (like MEWS) to classify patients into three target categories:
-   - `0`: Green / Stable
-   - `1`: Yellow / Urgent
-   - `2`: Red / Critical
-3. **Model Training:** A **Random Forest Classifier** (`RandomForestClassifier` from `scikit-learn`) is trained on 80% of the data and validated on the remaining 20% to ensure high accuracy.
-4. **Model Export:** The fully trained model is exported as a serialized `triage_model.pkl` file, which the Streamlit dashboard loads instantly to run real-time predictions.
+   git clone [https://github.com/tspratham09-hue/ambulance_triage.git](https://github.com/tspratham09-hue/ambulance_triage.git)
+   cd ambulance_triage
